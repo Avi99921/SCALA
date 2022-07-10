@@ -37,7 +37,7 @@ object Scala {
     println("Question 4 (a)");
     def XYZ(Normal:Int,Ot:Int) : Int = 
     {
-        return ((Normal*250+Ot*85)-(Normal*250+Ot*85)*12/100);
+        return ((Normal*250+Ot*85)-(Normal*250+Ot*85)*(12/100));
     }
     print("Rs.");
     println(XYZ(40,30));
