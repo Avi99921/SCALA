@@ -1,3 +1,4 @@
+import scala.io.StdIn.readInt;
 object Scala {
   def main(args: Array[String]): Unit = {
     var (k, i, j,m,n,f,g,c) = (2,2,2,5,5,12.0f,4.0f,"X");
