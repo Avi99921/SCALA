@@ -40,5 +40,32 @@ object Scala {
     }
     print("Rs.");
     println(XYZ(40,30));
+    
+    println("Question 4 (b)");
+    print("Enter proposed ticket price (Rs.) :");
+    var proposedPrice = readInt();
+    print("Profit (Rs.):");
+    print(profit(proposedPrice, 120));
+    def profit(proposedPrice: Int, crowd: Int): Int = {
+      return (totalRevenue(proposedPrice, crowd) - showCost(
+        proposedPrice,
+        crowd
+      ));
+    }
+    def totalRevenue(proposedPrice: Int, crowd: Int): Int = {
+      return (totalCrowd(proposedPrice, crowd) * proposedPrice);
+    }
+    def totalCrowd(proposedPrice: Int, crowd: Int): Int = {
+      if (proposedPrice < 15) {
+        return ((((15 - proposedPrice) / 5) * 20) + crowd);
+      } else if (proposedPrice > 15) {
+        return ((((proposedPrice - 15) / 5) * (-20)) + crowd);
+      } else {
+        return 0;
+      }
+    }
+    def showCost(proposedPrice: Int, crowd: Int): Int = {
+      return (500 + totalCrowd(proposedPrice, crowd) * 3);
+    }
   }
 }
